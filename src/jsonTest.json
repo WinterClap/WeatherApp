@@ -1,0 +1,47 @@
+{
+    "coord": {
+        "lon": -77.2811,
+        "lat": 1.2136
+    },
+    "weather": [
+        {
+            "id": 500,
+            "main": "Rain",
+            "description": "light rain",
+            "icon": "10d"
+        }
+    ],
+    "base": "stations",
+    "main": {
+        "temp": 11.37,
+        "feels_like": 10.99,
+        "temp_min": 11.37,
+        "temp_max": 11.37,
+        "pressure": 1018,
+        "humidity": 93,
+        "sea_level": 1018,
+        "grnd_level": 758
+    },
+    "visibility": 10000,
+    "wind": {
+        "speed": 0.54,
+        "deg": 174,
+        "gust": 0.92
+    },
+    "rain": {
+        "1h": 0.23
+    },
+    "clouds": {
+        "all": 100
+    },
+    "dt": 1619995056,
+    "sys": {
+        "country": "CO",
+        "sunrise": 1619953272,
+        "sunset": 1619997047
+    },
+    "timezone": -18000,
+    "id": 3672778,
+    "name": "Pasto",
+    "cod": 200
+}

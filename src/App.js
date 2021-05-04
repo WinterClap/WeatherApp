@@ -1,24 +1,61 @@
-import logo from './logo.svg';
-import './App.css';
+import styled from "styled-components"
+import { Nav } from "../src/Components/nav"
+import { motion } from "framer-motion"
+import { Home } from "./Components/home"
+
+const api = {
+  key: "4e55aa4c66c651940e57d444c79b6dfe",
+  base: ""
+}
+
+const AppContainer = styled.div`
+  width: 100%;
+  background-color: #19181f;
+  min-height: 100vh;
+  padding-top: 10px;
+`
+const BluredSpanObj = styled.span(props => ({ /** Pasar los styled como objetos en vez de como strings!! >:) */
+  height: '100px',
+  width: '100px',
+  borderRadius: '50%',
+  backgroundColor: props.backgroundColor,
+  filter: 'blur(70px)',
+  position: 'absolute',
+  top: props.top+'px',
+  right: props.right+'px',
+  zIndex: '3',
+}))
+
+function Blurs () {
+  return(
+    <div>
+      <BluredSpanObj backgroundColor = "rgba(137, 90, 3, 1)" top = "100"></BluredSpanObj>
+      <BluredSpanObj backgroundColor = "rgba(189,47,252,1)" top = "800" right = "20"></BluredSpanObj>
+    </div>
+  )
+}
+/* function Blur (props) {
+  const { blurIntensity}  = props
+
+  return (
+  <span style = {{
+    borderRadius: `{50%}`,
+    height: `{100px}`,
+    color: `{#3a222b}`,
+    filter: `blur(${blurIntensity}px)`
+  }}>
+
+    </span>
+  )
+} */
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppContainer>
+      <Blurs> </Blurs>
+      <Nav> </Nav>
+      <Home> </Home>
+    </AppContainer>
   );
 }
 
