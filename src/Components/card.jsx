@@ -1,7 +1,7 @@
 import { React, Component } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import ColdBg from "./cold-bg2.jpg";
+/* import ColdBg from "./cold-bg2.jpg";
 import WarmBg from "./warm-bg2.jpg";
 import "../index.css";
 
@@ -43,7 +43,7 @@ const WeatherImg = styled.div`
   width: 100px;
   height: 100px;
   background-image: url(${(props) => `https://openweathermap.org/img/wn/${props.bg}` + "@2x.png"}); /*url(${(props) =>
-    props.bg});*/
+    props.bg});
   background-position: center;
   background-size: cover;
 `;
@@ -167,12 +167,14 @@ function Boxes({
           <Box> asdasd 1 </Box>
           <Box> asdasd 2asdasdasdasdasd</Box>
           <Box> asdasd 3 </Box>
-        </LeftColumn> */}
+        </LeftColumn> }
         <LeftColumn>
           <Box>
-            <WeatherImg bg={w_icon} /*`https://openweathermap.org/img/wn/${w_icon}@2x.png` */></WeatherImg>
+            <WeatherImg bg={w_icon} `https://openweathermap.org/img/wn/${w_icon}@2x.png` ></WeatherImg>
             <h2> {w_main}</h2>
             <h3>{capitalize(w_description)}</h3>
+            <br />
+            <h3>{m_seaLevel} m</h3>
           </Box>
         </LeftColumn>
         <CenterColumn>
@@ -235,25 +237,26 @@ export class Card extends Component {
 
   render() {
     return (
-      <Boxes
-        cityName="Pasto"
-        l_lon="-77.2811"
-        l_lat="1.2136"
-        w_main="Rain"
-        w_description="light rain"
-        w_icon="10d"
-        m_cTemp="11.37"
-        m_cTempFeelsLike="10.99"
-        m_cTempMin="11.37"
-        m_cTempMax="11.37"
-        m_PaPreassure="1018"
-        m_humidity="93"
-        m_seaLevel="1018"
-        wind_speed="0.54"
-        rain_hourVolume_mm="0.23"
-        clouds_cloudinessPercentage="100"
-        country_code="CO"
+        <Boxes
+        cityName={this.props.arr[0]}
+        l_lon= {this.props.results.coord.lon}
+        l_lat={this.props.results.coord.lat}
+        w_main={this.props.results.weather.main}
+        w_description={this.props.results.weather.description}
+        w_icon={this.props.results.weather.icon}
+        m_cTemp={this.props.results.main.temp}
+        m_cTempFeelsLike={this.props.results.main.feels_like}
+        m_cTempMin={this.props.results.main.temp_min}
+        m_cTempMax={this.props.results.main.temp_max}
+        m_PaPreassure={this.props.results.main.pressure}
+        m_humidity={this.props.results.main.humidity}
+        m_seaLevel={this.props.results.main.sea_level}
+        wind_speed={this.props.results.wind.speed}
+        rain_hourVolume_mm={this.props.results.rain._1h}
+        clouds_cloudinessPercentage={this.props.results.clouds.all}
+        country_code={this.props.results.sys.country}
       ></Boxes>
     );
   }
 }
+*/

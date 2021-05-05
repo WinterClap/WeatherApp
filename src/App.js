@@ -1,12 +1,7 @@
 import styled from "styled-components"
 import { Nav } from "../src/Components/nav"
 import { motion } from "framer-motion"
-import { Home } from "./Components/home"
-
-const api = {
-  key: "4e55aa4c66c651940e57d444c79b6dfe",
-  base: ""
-}
+import { SearchBar } from "./Components/home"
 
 const AppContainer = styled.div`
   width: 100%;
@@ -54,7 +49,7 @@ function App() {
     <AppContainer>
       <Blurs> </Blurs>
       <Nav> </Nav>
-      <Home> </Home>
+      <SearchBar />
     </AppContainer>
   );
 }
