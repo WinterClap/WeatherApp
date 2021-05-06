@@ -5,7 +5,7 @@ import ColdBg from "./cold-bg2.jpg";
 import WarmBg from "./warm-bg2.jpg";
 import "../index.css";
 import { Marginer } from "./Marginer/index";
-import { findRenderedDOMComponentWithClass } from "react-dom/test-utils";
+
 function GetDate(d) {
   let months = [
     "January",
@@ -97,7 +97,13 @@ const api = {
   base: "https://api.openweathermap.org/data/2.5/",
   units: "metric",
 };
-
+const VigneteDiv = styled.div`
+  position: relative;
+  border-radius: 50px;
+  box-shadow: inset 0 0 100px rgba(0, 0, 0, 1);
+  transition: all 100ms ease;
+  z-index: 4;
+`;
 const CardContainer = styled(motion.div)`
   display: flex;
   justify-content: flex-start;
@@ -106,7 +112,7 @@ const CardContainer = styled(motion.div)`
   width: 1000px;
   height: 768px;
   border-radius: 50px;
-  background-image: url(${ColdBg});
+  background-image: url(${(props) => props.imag});
   background-size: contain;
   background-position: bottom;
   box-shadow: 0px 0px 50px rgba(189, 47, 252, 0.2);
@@ -240,7 +246,7 @@ function Boxes({
 }) {
   return (
     <CardContainer
-      imag="ColdBg"
+      imag={ColdBg}
       initial={{ scale: 0 }}
       animate={{ rotate: 360, scale: 1 }}
       transition={{
@@ -256,13 +262,8 @@ function Boxes({
         </p>
       </h1>
       <Row>
-        {/*         <LeftColumn>
-          <Box> asdasd 1 </Box>
-          <Box> asdasd 2asdasdasdasdasd</Box>
-          <Box> asdasd 3 </Box>
-        </LeftColumn> */}
         <LeftColumn>
-          <Box>
+          <Box whileHover={{ scale: 1.02, transition: 0.5 }}>
             <WeatherImg bg={w_icon}></WeatherImg>
             <h2> {w_main}</h2>
             <h3>{capitalize(w_description)}</h3>
